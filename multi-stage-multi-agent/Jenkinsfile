@@ -15,7 +15,7 @@ pipeline {
 
                 // Create Java Hello World app
                 sh '''
-                    cat > HelloWorld.java <<EOF
+cat > HelloWorld.java <<EOF
                     public class HelloWorld {
                         public static void main(String[] args) {
                             System.out.println("Hello World from Java Backend!");
@@ -44,7 +44,7 @@ pipeline {
 
                 // Create Node.js Hello World app
                 sh '''
-                    cat > app.js <<EOF
+cat > app.js <<EOF
                     console.log("Hello World from Node Frontend!");
                     EOF
                 '''
