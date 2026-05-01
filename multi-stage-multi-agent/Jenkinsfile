@@ -11,23 +11,21 @@ pipeline {
             }
 
             steps {
+
                 sh 'mvn --version'
 
-                // Create Java Hello World app
                 sh '''
 cat > HelloWorld.java <<EOF
-                    public class HelloWorld {
-                        public static void main(String[] args) {
-                            System.out.println("Hello World from Java Backend!");
-                        }
-                    }
-                    EOF
-                '''
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World from Java Backend!");
+    }
+}
+EOF
+'''
 
-                // Compile Java program
                 sh 'javac HelloWorld.java'
 
-                // Run Java program
                 sh 'java HelloWorld'
             }
         }
@@ -40,16 +38,15 @@ cat > HelloWorld.java <<EOF
             }
 
             steps {
+
                 sh 'node --version'
 
-                // Create Node.js Hello World app
                 sh '''
 cat > app.js <<EOF
-                    console.log("Hello World from Node Frontend!");
-                    EOF
-                '''
+console.log("Hello World from Node Frontend!");
+EOF
+'''
 
-                // Run Node.js app
                 sh 'node app.js'
             }
         }
